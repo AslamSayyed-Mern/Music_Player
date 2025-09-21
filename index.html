@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player 10K</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Main Player Section -->
+            <div class="col-lg-8 col-md-12">
+                <div class="music-player-container">
+                    <!-- Album Art Section -->
+                    <div class="album-art-section">
+                        <div class="album-art-container">
+                            <img id="albumArt" src="Images/l_theme_image.jfif" alt="L's Theme - Death Note OST" class="album-art">
+                            <div class="vinyl-effect"></div>
+                        </div>
+                    </div>
+
+                    <!-- Song Details -->
+                    <div class="song-details">
+                        <h2 id="songTitle" class="song-title">L's Theme</h2>
+                        <p id="songArtist" class="song-artist">Death Note OST</p>
+                        <p id="songAlbum" class="song-album">Death Note Original Soundtrack</p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-section">
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span>
+                            <span id="totalTime">0:00</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar-container" id="progressBarContainer">
+                                <div class="progress-bar" id="progressBar"></div>
+                                <div class="progress-handle" id="progressHandle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Control Buttons -->
+                    <div class="control-buttons">
+                        <button class="btn btn-control" id="shuffleBtn" title="Shuffle">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        <button class="btn btn-control" id="prevBtn" title="Previous">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="btn btn-play-pause" id="playPauseBtn" title="Play">
+                            <i class="fas fa-play" id="playPauseIcon"></i>
+                        </button>
+                        <button class="btn btn-control" id="nextBtn" title="Next">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <button class="btn btn-control" id="repeatBtn" title="Repeat">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+
+                    <!-- Volume Control -->
+                    <div class="volume-section">
+                        <button class="btn btn-mute" id="muteBtn" title="Mute">
+                            <i class="fas fa-volume-up" id="muteIcon"></i>
+                        </button>
+                        <div class="volume-container">
+                            <div class="volume-bar-container" id="volumeBarContainer">
+                                <div class="volume-bar" id="volumeBar"></div>
+                                <div class="volume-handle" id="volumeHandle"></div>
+                            </div>
+                        </div>
+                        <i class="fas fa-volume-up volume-icon"></i>
+                    </div>
+
+                    <!-- Hidden Audio Element -->
+                    <audio id="audioPlayer" preload="metadata"></audio>
+                </div>
+            </div>
+
+            <!-- Playlist Section -->
+            <div class="col-lg-4 col-md-12">
+                <div class="playlist-container">
+                    <div class="playlist-header">
+                        <h3><i class="fas fa-list"></i> Playlist</h3>
+                        <span id="playlistCount">0 songs</span>
+                    </div>
+                    <div class="playlist" id="playlist">
+                        <!-- Playlist items will be dynamically generated -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
